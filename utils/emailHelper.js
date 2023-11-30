@@ -18,7 +18,7 @@ const mailHelper = async (option)=>{
 
 //&  actual message 
 const message = {
-    from: 'sospeter.dev', //& sender address
+    from: 'wopafy.com', //& sender address
     to: option.email, //& list of receivers
     subject: option.subject, //& Subject line
     text: option.message, //& plain text body

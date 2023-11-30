@@ -149,7 +149,7 @@ exports.forgotPassword = BigPromise(async ( req , res ,next )=>{
 
     //& send an error response 
 
-    ErrorResponse(500, "An Error encountered trying to send the email" , error.message)
+    ErrorResponse(res, 500, "An Error encountered trying to send the email" , error.message)
     return next( new CustomError( 500, false , error.message))
   }
 
