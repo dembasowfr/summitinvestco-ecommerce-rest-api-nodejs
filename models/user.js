@@ -8,22 +8,22 @@ const crypto = require('crypto')
 const userSchema = new mongoose.Schema({
       firstName: {
         type: String,
-        required: [true, "Please provide a  first name"],
+        required: [true, "Please provide a  first name!!!"],
       },
       lastName: {
         type: String,
-        required: [true, "Please provide a last name"],
+        required: [true, "Please provide a last name!!!"],
       },
       email: {
         type: String,
-        required: [true, "Please provide an email"],
-        validate: [ validator.isEmail , "please enter a valid email"],
+        required: [true, "Please provide an email!!!"],
+        validate: [ validator.isEmail , "please enter a valid email!!!"],
         unique: true 
       },
       password: {
         type: String,
-        required: [true, "Please provide a password"],
-        minLength: [6 , "password should be atleast 6 char "],
+        required: [true, "Please provide a password!!!"],
+        minLength: [6 , "password should be atleast 6 characters long!!!"],
         select: false 
       },
       role: {
@@ -32,13 +32,12 @@ const userSchema = new mongoose.Schema({
       },
       photo: {
         id: { 
-            type: String,
+          type: String,
         }, 
         
         secure_url: { 
-            type: String,
+          type: String,
         }, 
-        
       },
       forgotPasswordToken: {
         type: String 
@@ -55,7 +54,7 @@ const userSchema = new mongoose.Schema({
 //& encrypt password before save 
 
 userSchema.pre('save', async function(next){
-   //& If password is not modified wont encrypt 
+   //& If password is not modified won't encrypt 
    
    if(!this.isModified('password')) return next();
 

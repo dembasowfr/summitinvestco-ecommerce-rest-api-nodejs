@@ -245,7 +245,11 @@ exports.LoggedInUserDetailsUpdate = BigPromise( async ( req , res ,next )=> {
        firstName: req.body.firstName,
        lastName: req.body.lastName,
        email: req.body.email,
-       role : req.body.role 
+       role : req.body.role,
+       photo: {
+            id: req.body.photo.id,
+            secure_url: req.body.photo.secure_url
+        }
     }
 
     //& find a user and update them with the new details 
